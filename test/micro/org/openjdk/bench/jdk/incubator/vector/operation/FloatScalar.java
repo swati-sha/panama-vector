@@ -221,7 +221,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
         bh.consume(rs);
     }
 
-
     @Benchmark
     public void DIV(Blackhole bh) {
         float[] as = fa.apply(size);
@@ -238,8 +237,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
 
         bh.consume(rs);
     }
-
-
 
     @Benchmark
     public void DIVMasked(Blackhole bh) {
@@ -261,7 +258,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
         }
         bh.consume(rs);
     }
-
 
     @Benchmark
     public void FIRST_NONZERO(Blackhole bh) {
@@ -301,58 +297,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
         bh.consume(rs);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @Benchmark
     public void MIN(Blackhole bh) {
         float[] as = fa.apply(size);
@@ -386,12 +330,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
 
         bh.consume(rs);
     }
-
-
-
-
-
-
 
     @Benchmark
     public void ADDLanes(Blackhole bh) {
@@ -449,8 +387,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
         bh.consume(r);
     }
 
-
-
     @Benchmark
     public void IS_DEFAULT(Blackhole bh) {
         float[] as = fa.apply(size);
@@ -481,7 +417,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
         bh.consume(r);
     }
 
-
     @Benchmark
     public void IS_FINITE(Blackhole bh) {
         float[] as = fa.apply(size);
@@ -496,8 +431,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
 
         bh.consume(r);
     }
-
-
 
     @Benchmark
     public void IS_NAN(Blackhole bh) {
@@ -514,8 +447,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
         bh.consume(r);
     }
 
-
-
     @Benchmark
     public void IS_INFINITE(Blackhole bh) {
         float[] as = fa.apply(size);
@@ -530,7 +461,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
 
         bh.consume(r);
     }
-
 
     @Benchmark
     public void LT(Blackhole bh) {
@@ -622,10 +552,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
         bh.consume(r);
     }
 
-
-
-
-
     @Benchmark
     public void blend(Blackhole bh) {
         float[] as = fa.apply(size);
@@ -644,6 +570,7 @@ public class FloatScalar extends AbstractVectorBenchmark {
 
         bh.consume(rs);
     }
+
     void rearrangeShared(int window, Blackhole bh) {
         float[] as = fa.apply(size);
         int[] order = fs.apply(size);
@@ -735,6 +662,7 @@ public class FloatScalar extends AbstractVectorBenchmark {
 
         bh.consume(rm);
     }
+
     void broadcastShared(int window, Blackhole bh) {
         float[] as = fa.apply(size);
         float[] rs = fr.apply(size);
@@ -788,7 +716,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
         bh.consume(as);
     }
 
-
     @Benchmark
     public void SIN(Blackhole bh) {
         float[] as = fa.apply(size);
@@ -803,8 +730,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
 
         bh.consume(rs);
     }
-
-
 
     @Benchmark
     public void EXP(Blackhole bh) {
@@ -821,8 +746,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
         bh.consume(rs);
     }
 
-
-
     @Benchmark
     public void LOG1P(Blackhole bh) {
         float[] as = fa.apply(size);
@@ -837,8 +760,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
 
         bh.consume(rs);
     }
-
-
 
     @Benchmark
     public void LOG(Blackhole bh) {
@@ -855,8 +776,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
         bh.consume(rs);
     }
 
-
-
     @Benchmark
     public void LOG10(Blackhole bh) {
         float[] as = fa.apply(size);
@@ -871,8 +790,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
 
         bh.consume(rs);
     }
-
-
 
     @Benchmark
     public void EXPM1(Blackhole bh) {
@@ -889,8 +806,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
         bh.consume(rs);
     }
 
-
-
     @Benchmark
     public void COS(Blackhole bh) {
         float[] as = fa.apply(size);
@@ -905,8 +820,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
 
         bh.consume(rs);
     }
-
-
 
     @Benchmark
     public void TAN(Blackhole bh) {
@@ -923,8 +836,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
         bh.consume(rs);
     }
 
-
-
     @Benchmark
     public void SINH(Blackhole bh) {
         float[] as = fa.apply(size);
@@ -939,8 +850,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
 
         bh.consume(rs);
     }
-
-
 
     @Benchmark
     public void COSH(Blackhole bh) {
@@ -957,8 +866,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
         bh.consume(rs);
     }
 
-
-
     @Benchmark
     public void TANH(Blackhole bh) {
         float[] as = fa.apply(size);
@@ -973,8 +880,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
 
         bh.consume(rs);
     }
-
-
 
     @Benchmark
     public void ASIN(Blackhole bh) {
@@ -991,8 +896,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
         bh.consume(rs);
     }
 
-
-
     @Benchmark
     public void ACOS(Blackhole bh) {
         float[] as = fa.apply(size);
@@ -1007,8 +910,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
 
         bh.consume(rs);
     }
-
-
 
     @Benchmark
     public void ATAN(Blackhole bh) {
@@ -1025,8 +926,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
         bh.consume(rs);
     }
 
-
-
     @Benchmark
     public void CBRT(Blackhole bh) {
         float[] as = fa.apply(size);
@@ -1041,8 +940,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
 
         bh.consume(rs);
     }
-
-
 
     @Benchmark
     public void HYPOT(Blackhole bh) {
@@ -1061,8 +958,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
         bh.consume(rs);
     }
 
-
-
     @Benchmark
     public void POW(Blackhole bh) {
         float[] as = fa.apply(size);
@@ -1080,8 +975,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
         bh.consume(rs);
     }
 
-
-
     @Benchmark
     public void ATAN2(Blackhole bh) {
         float[] as = fa.apply(size);
@@ -1098,8 +991,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
 
         bh.consume(rs);
     }
-
-
 
     @Benchmark
     public void FMA(Blackhole bh) {
@@ -1119,9 +1010,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
 
         bh.consume(rs);
     }
-
-
-
 
     @Benchmark
     public void FMAMasked(Blackhole bh) {
@@ -1145,9 +1033,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
         }
         bh.consume(rs);
     }
-
-
-
 
     @Benchmark
     public void NEG(Blackhole bh) {
@@ -1213,11 +1098,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
         bh.consume(rs);
     }
 
-
-
-
-
-
     @Benchmark
     public void SQRT(Blackhole bh) {
         float[] as = fa.apply(size);
@@ -1232,8 +1112,6 @@ public class FloatScalar extends AbstractVectorBenchmark {
 
         bh.consume(rs);
     }
-
-
 
     @Benchmark
     public void SQRTMasked(Blackhole bh) {
@@ -1251,18 +1129,4 @@ public class FloatScalar extends AbstractVectorBenchmark {
 
         bh.consume(rs);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
-

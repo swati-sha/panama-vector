@@ -1016,8 +1016,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         }
     }
 
-
-
     static long bits(double e) {
         return  Double.doubleToLongBits(e);
     }
@@ -1201,7 +1199,6 @@ public class Double512VectorTests extends AbstractVectorTest {
                 toArray(Object[][]::new);
     }
 
-
     static final List<IntFunction<double[]>> DOUBLE_COMPARE_GENERATORS = List.of(
             withToString("double[i]", (int s) -> {
                 return fill(s * BUFFER_REPS,
@@ -1346,7 +1343,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         return a >= b;
     }
 
-
     static double firstNonZero(double a, double b) {
         return Double.compare(a, (double) 0) != 0 ? a : b;
     }
@@ -1463,6 +1459,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEquals(r, a, b, Double512VectorTests::ADD);
     }
+
     static double add(double a, double b) {
         return (double)(a + b);
     }
@@ -1519,6 +1516,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEquals(r, a, b, mask, Double512VectorTests::add);
     }
+
     static double SUB(double a, double b) {
         return (double)(a - b);
     }
@@ -1539,6 +1537,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEquals(r, a, b, Double512VectorTests::SUB);
     }
+
     static double sub(double a, double b) {
         return (double)(a - b);
     }
@@ -1595,6 +1594,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEquals(r, a, b, mask, Double512VectorTests::sub);
     }
+
     static double MUL(double a, double b) {
         return (double)(a * b);
     }
@@ -1615,6 +1615,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEquals(r, a, b, Double512VectorTests::MUL);
     }
+
     static double mul(double a, double b) {
         return (double)(a * b);
     }
@@ -1692,6 +1693,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEquals(r, a, b, Double512VectorTests::DIV);
     }
+
     static double div(double a, double b) {
         return (double)(a / b);
     }
@@ -1710,8 +1712,6 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEquals(r, a, b, Double512VectorTests::div);
     }
-
-
 
     @Test(dataProvider = "doubleBinaryOpMaskProvider")
     static void DIVDouble512VectorTestsMasked(IntFunction<double[]> fa, IntFunction<double[]> fb,
@@ -1750,8 +1750,6 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEquals(r, a, b, mask, Double512VectorTests::div);
     }
-
-
 
     static double FIRST_NONZERO(double a, double b) {
         return (double)(Double.doubleToLongBits(a)!=0?a:b);
@@ -1793,14 +1791,6 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEquals(r, a, b, mask, Double512VectorTests::FIRST_NONZERO);
     }
-
-
-
-
-
-
-
-
 
     @Test(dataProvider = "doubleBinaryOpProvider")
     static void addDouble512VectorTestsBroadcastSmokeTest(IntFunction<double[]> fa, IntFunction<double[]> fb) {
@@ -1895,7 +1885,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertBroadcastArraysEquals(r, a, b, mask, Double512VectorTests::mul);
     }
 
-
     @Test(dataProvider = "doubleBinaryOpProvider")
     static void divDouble512VectorTestsBroadcastSmokeTest(IntFunction<double[]> fa, IntFunction<double[]> fb) {
         double[] a = fa.apply(SPECIES.length());
@@ -1909,8 +1898,6 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertBroadcastArraysEquals(r, a, b, Double512VectorTests::div);
     }
-
-
 
     @Test(dataProvider = "doubleBinaryOpMaskProvider")
     static void divDouble512VectorTestsBroadcastMaskedSmokeTest(IntFunction<double[]> fa, IntFunction<double[]> fb,
@@ -1928,15 +1915,6 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertBroadcastArraysEquals(r, a, b, mask, Double512VectorTests::div);
     }
-
-
-
-
-
-
-
-
-
 
     @Test(dataProvider = "doubleBinaryOpProvider")
     static void ADDDouble512VectorTestsBroadcastLongSmokeTest(IntFunction<double[]> fa, IntFunction<double[]> fb) {
@@ -1969,49 +1947,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertBroadcastLongArraysEquals(r, a, b, mask, Double512VectorTests::ADD);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     static double MIN(double a, double b) {
         return (double)(Math.min(a, b));
     }
@@ -2032,6 +1967,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEquals(r, a, b, Double512VectorTests::MIN);
     }
+
     static double min(double a, double b) {
         return (double)(Math.min(a, b));
     }
@@ -2050,6 +1986,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEquals(r, a, b, Double512VectorTests::min);
     }
+
     static double MAX(double a, double b) {
         return (double)(Math.max(a, b));
     }
@@ -2070,6 +2007,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEquals(r, a, b, Double512VectorTests::MAX);
     }
+
     static double max(double a, double b) {
         return (double)(Math.max(a, b));
     }
@@ -2145,17 +2083,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertBroadcastArraysEquals(r, a, b, Double512VectorTests::max);
     }
 
-
-
-
-
-
-
-
-
-
-
-
     static double ADDReduce(double[] a, int idx) {
         double res = 0;
         for (int i = idx; i < (idx + SPECIES.length()); i++) {
@@ -2173,6 +2100,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         return res;
     }
+
     @Test(dataProvider = "doubleUnaryOpProvider")
     static void ADDReduceDouble512VectorTests(IntFunction<double[]> fa) {
         double[] a = fa.apply(SPECIES.length());
@@ -2197,6 +2125,7 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertReductionArraysEquals(r, ra, a,
                 Double512VectorTests::ADDReduce, Double512VectorTests::ADDReduceAll);
     }
+
     static double ADDReduceMasked(double[] a, int idx, boolean[] mask) {
         double res = 0;
         for (int i = idx; i < (idx + SPECIES.length()); i++) {
@@ -2215,6 +2144,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         return res;
     }
+
     @Test(dataProvider = "doubleUnaryOpMaskProvider")
     static void ADDReduceDouble512VectorTestsMasked(IntFunction<double[]> fa, IntFunction<boolean[]> fm) {
         double[] a = fa.apply(SPECIES.length());
@@ -2241,6 +2171,7 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertReductionArraysEqualsMasked(r, ra, a, mask,
                 Double512VectorTests::ADDReduceMasked, Double512VectorTests::ADDReduceAllMasked);
     }
+
     static double MULReduce(double[] a, int idx) {
         double res = 1;
         for (int i = idx; i < (idx + SPECIES.length()); i++) {
@@ -2258,6 +2189,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         return res;
     }
+
     @Test(dataProvider = "doubleUnaryOpProvider")
     static void MULReduceDouble512VectorTests(IntFunction<double[]> fa) {
         double[] a = fa.apply(SPECIES.length());
@@ -2282,6 +2214,7 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertReductionArraysEquals(r, ra, a,
                 Double512VectorTests::MULReduce, Double512VectorTests::MULReduceAll);
     }
+
     static double MULReduceMasked(double[] a, int idx, boolean[] mask) {
         double res = 1;
         for (int i = idx; i < (idx + SPECIES.length()); i++) {
@@ -2300,6 +2233,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         return res;
     }
+
     @Test(dataProvider = "doubleUnaryOpMaskProvider")
     static void MULReduceDouble512VectorTestsMasked(IntFunction<double[]> fa, IntFunction<boolean[]> fm) {
         double[] a = fa.apply(SPECIES.length());
@@ -2326,6 +2260,7 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertReductionArraysEqualsMasked(r, ra, a, mask,
                 Double512VectorTests::MULReduceMasked, Double512VectorTests::MULReduceAllMasked);
     }
+
     static double MINReduce(double[] a, int idx) {
         double res = Double.POSITIVE_INFINITY;
         for (int i = idx; i < (idx + SPECIES.length()); i++) {
@@ -2343,6 +2278,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         return res;
     }
+
     @Test(dataProvider = "doubleUnaryOpProvider")
     static void MINReduceDouble512VectorTests(IntFunction<double[]> fa) {
         double[] a = fa.apply(SPECIES.length());
@@ -2367,6 +2303,7 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertReductionArraysEquals(r, ra, a,
                 Double512VectorTests::MINReduce, Double512VectorTests::MINReduceAll);
     }
+
     static double MINReduceMasked(double[] a, int idx, boolean[] mask) {
         double res = Double.POSITIVE_INFINITY;
         for (int i = idx; i < (idx + SPECIES.length()); i++) {
@@ -2385,6 +2322,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         return res;
     }
+
     @Test(dataProvider = "doubleUnaryOpMaskProvider")
     static void MINReduceDouble512VectorTestsMasked(IntFunction<double[]> fa, IntFunction<boolean[]> fm) {
         double[] a = fa.apply(SPECIES.length());
@@ -2411,6 +2349,7 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertReductionArraysEqualsMasked(r, ra, a, mask,
                 Double512VectorTests::MINReduceMasked, Double512VectorTests::MINReduceAllMasked);
     }
+
     static double MAXReduce(double[] a, int idx) {
         double res = Double.NEGATIVE_INFINITY;
         for (int i = idx; i < (idx + SPECIES.length()); i++) {
@@ -2428,6 +2367,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         return res;
     }
+
     @Test(dataProvider = "doubleUnaryOpProvider")
     static void MAXReduceDouble512VectorTests(IntFunction<double[]> fa) {
         double[] a = fa.apply(SPECIES.length());
@@ -2452,6 +2392,7 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertReductionArraysEquals(r, ra, a,
                 Double512VectorTests::MAXReduce, Double512VectorTests::MAXReduceAll);
     }
+
     static double MAXReduceMasked(double[] a, int idx, boolean[] mask) {
         double res = Double.NEGATIVE_INFINITY;
         for (int i = idx; i < (idx + SPECIES.length()); i++) {
@@ -2470,6 +2411,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         return res;
     }
+
     @Test(dataProvider = "doubleUnaryOpMaskProvider")
     static void MAXReduceDouble512VectorTestsMasked(IntFunction<double[]> fa, IntFunction<boolean[]> fm) {
         double[] a = fa.apply(SPECIES.length());
@@ -2496,6 +2438,7 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertReductionArraysEqualsMasked(r, ra, a, mask,
                 Double512VectorTests::MAXReduceMasked, Double512VectorTests::MAXReduceAllMasked);
     }
+
     static double FIRST_NONZEROReduce(double[] a, int idx) {
         double res = (double) 0;
         for (int i = idx; i < (idx + SPECIES.length()); i++) {
@@ -2513,6 +2456,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         return res;
     }
+
     @Test(dataProvider = "doubleUnaryOpProvider")
     static void FIRST_NONZEROReduceDouble512VectorTests(IntFunction<double[]> fa) {
         double[] a = fa.apply(SPECIES.length());
@@ -2537,6 +2481,7 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertReductionArraysEquals(r, ra, a,
                 Double512VectorTests::FIRST_NONZEROReduce, Double512VectorTests::FIRST_NONZEROReduceAll);
     }
+
     static double FIRST_NONZEROReduceMasked(double[] a, int idx, boolean[] mask) {
         double res = (double) 0;
         for (int i = idx; i < (idx + SPECIES.length()); i++) {
@@ -2555,6 +2500,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         return res;
     }
+
     @Test(dataProvider = "doubleUnaryOpMaskProvider")
     static void FIRST_NONZEROReduceDouble512VectorTestsMasked(IntFunction<double[]> fa, IntFunction<boolean[]> fm) {
         double[] a = fa.apply(SPECIES.length());
@@ -2582,10 +2528,6 @@ public class Double512VectorTests extends AbstractVectorTest {
                 Double512VectorTests::FIRST_NONZEROReduceMasked, Double512VectorTests::FIRST_NONZEROReduceAllMasked);
     }
 
-
-
-
-
     @Test(dataProvider = "doubleUnaryOpProvider")
     static void withDouble512VectorTests(IntFunction<double []> fa) {
         double[] a = fa.apply(SPECIES.length());
@@ -2603,6 +2545,7 @@ public class Double512VectorTests extends AbstractVectorTest {
             assertInsertArraysEquals(r, a, (double)(65535+i), (j++ & (SPECIES.length()-1)), i , i + SPECIES.length());
         }
     }
+
     static boolean testIS_DEFAULT(double a) {
         return bits(a)==0;
     }
@@ -2641,6 +2584,7 @@ public class Double512VectorTests extends AbstractVectorTest {
             }
         }
     }
+
     static boolean testIS_NEGATIVE(double a) {
         return bits(a)<0;
     }
@@ -2719,7 +2663,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         }
     }
 
-
     static boolean testIS_NAN(double a) {
         return Double.isNaN(a);
     }
@@ -2758,7 +2701,6 @@ public class Double512VectorTests extends AbstractVectorTest {
             }
         }
     }
-
 
     static boolean testIS_INFINITE(double a) {
         return Double.isInfinite(a);
@@ -2799,7 +2741,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         }
     }
 
-
     @Test(dataProvider = "doubleCompareOpProvider")
     static void LTDouble512VectorTests(IntFunction<double[]> fa, IntFunction<double[]> fb) {
         double[] a = fa.apply(SPECIES.length());
@@ -2818,7 +2759,6 @@ public class Double512VectorTests extends AbstractVectorTest {
             }
         }
     }
-
 
     @Test(dataProvider = "doubleCompareOpProvider")
     static void ltDouble512VectorTests(IntFunction<double[]> fa, IntFunction<double[]> fb) {
@@ -2862,7 +2802,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         }
     }
 
-
     @Test(dataProvider = "doubleCompareOpProvider")
     static void GTDouble512VectorTests(IntFunction<double[]> fa, IntFunction<double[]> fb) {
         double[] a = fa.apply(SPECIES.length());
@@ -2905,7 +2844,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         }
     }
 
-
     @Test(dataProvider = "doubleCompareOpProvider")
     static void EQDouble512VectorTests(IntFunction<double[]> fa, IntFunction<double[]> fb) {
         double[] a = fa.apply(SPECIES.length());
@@ -2924,7 +2862,6 @@ public class Double512VectorTests extends AbstractVectorTest {
             }
         }
     }
-
 
     @Test(dataProvider = "doubleCompareOpProvider")
     static void eqDouble512VectorTests(IntFunction<double[]> fa, IntFunction<double[]> fb) {
@@ -2968,7 +2905,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         }
     }
 
-
     @Test(dataProvider = "doubleCompareOpProvider")
     static void NEDouble512VectorTests(IntFunction<double[]> fa, IntFunction<double[]> fb) {
         double[] a = fa.apply(SPECIES.length());
@@ -3010,7 +2946,6 @@ public class Double512VectorTests extends AbstractVectorTest {
             }
         }
     }
-
 
     @Test(dataProvider = "doubleCompareOpProvider")
     static void LEDouble512VectorTests(IntFunction<double[]> fa, IntFunction<double[]> fb) {
@@ -3054,7 +2989,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         }
     }
 
-
     @Test(dataProvider = "doubleCompareOpProvider")
     static void GEDouble512VectorTests(IntFunction<double[]> fa, IntFunction<double[]> fb) {
         double[] a = fa.apply(SPECIES.length());
@@ -3097,15 +3031,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         }
     }
 
-
-
-
-
-
-
-
-
-
     @Test(dataProvider = "doubleCompareOpProvider")
     static void LTDouble512VectorTestsBroadcastSmokeTest(IntFunction<double[]> fa, IntFunction<double[]> fb) {
         double[] a = fa.apply(SPECIES.length());
@@ -3121,7 +3046,6 @@ public class Double512VectorTests extends AbstractVectorTest {
             }
         }
     }
-
 
     @Test(dataProvider = "doubleCompareOpMaskProvider")
     static void LTDouble512VectorTestsBroadcastMaskedSmokeTest(IntFunction<double[]> fa,
@@ -3159,7 +3083,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         }
     }
 
-
     @Test(dataProvider = "doubleCompareOpMaskProvider")
     static void LTDouble512VectorTestsBroadcastLongMaskedSmokeTest(IntFunction<double[]> fa,
                                 IntFunction<double[]> fb, IntFunction<boolean[]> fm) {
@@ -3196,7 +3119,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         }
     }
 
-
     @Test(dataProvider = "doubleCompareOpMaskProvider")
     static void EQDouble512VectorTestsBroadcastMaskedSmokeTest(IntFunction<double[]> fa,
                                 IntFunction<double[]> fb, IntFunction<boolean[]> fm) {
@@ -3232,7 +3154,6 @@ public class Double512VectorTests extends AbstractVectorTest {
             }
         }
     }
-
 
     @Test(dataProvider = "doubleCompareOpMaskProvider")
     static void EQDouble512VectorTestsBroadcastLongMaskedSmokeTest(IntFunction<double[]> fa,
@@ -3348,6 +3269,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertexpandArraysEquals(r, a, mask, SPECIES.length());
     }
+
     @Test(dataProvider = "doubleUnaryOpProvider")
     static void getDouble512VectorTests(IntFunction<double[]> fa) {
         double[] a = fa.apply(SPECIES.length());
@@ -3518,10 +3440,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertBroadcastArraysEquals(r, a);
     }
 
-
-
-
-
     @Test(dataProvider = "doubleUnaryOpProvider")
     static void ZeroDouble512VectorTests(IntFunction<double[]> fa) {
         double[] a = fa.apply(SPECIES.length());
@@ -3535,9 +3453,6 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         Assert.assertEquals(a, r);
     }
-
-
-
 
     static double[] sliceUnary(double[] a, int origin, int idx) {
         double[] res = new double[SPECIES.length()];
@@ -3564,6 +3479,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEquals(r, a, origin, Double512VectorTests::sliceUnary);
     }
+
     static double[] sliceBinary(double[] a, double[] b, int origin, int idx) {
         double[] res = new double[SPECIES.length()];
         for (int i = 0, j = 0; i < SPECIES.length(); i++){
@@ -3593,6 +3509,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEquals(r, a, b, origin, Double512VectorTests::sliceBinary);
     }
+
     static double[] slice(double[] a, double[] b, int origin, boolean[] mask, int idx) {
         double[] res = new double[SPECIES.length()];
         for (int i = 0, j = 0; i < SPECIES.length(); i++){
@@ -3626,6 +3543,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEquals(r, a, b, origin, mask, Double512VectorTests::slice);
     }
+
     static double[] unsliceUnary(double[] a, int origin, int idx) {
         double[] res = new double[SPECIES.length()];
         for (int i = 0, j = 0; i < SPECIES.length(); i++){
@@ -3653,6 +3571,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEquals(r, a, origin, Double512VectorTests::unsliceUnary);
     }
+
     static double[] unsliceBinary(double[] a, double[] b, int origin, int part, int idx) {
         double[] res = new double[SPECIES.length()];
         for (int i = 0, j = 0; i < SPECIES.length(); i++){
@@ -3692,6 +3611,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEquals(r, a, b, origin, part, Double512VectorTests::unsliceBinary);
     }
+
     static double[] unslice(double[] a, double[] b, int origin, int part, boolean[] mask, int idx) {
         double[] res = new double[SPECIES.length()];
         for (int i = 0, j = 0; i < SPECIES.length(); i++){
@@ -3772,7 +3692,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertArraysEqualsWithinOneUlp(r, a, Double512VectorTests::SIN, Double512VectorTests::strictSIN);
     }
 
-
     static double EXP(double a) {
         return (double)(Math.exp((double)a));
     }
@@ -3795,7 +3714,6 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEqualsWithinOneUlp(r, a, Double512VectorTests::EXP, Double512VectorTests::strictEXP);
     }
-
 
     static double LOG1P(double a) {
         return (double)(Math.log1p((double)a));
@@ -3820,7 +3738,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertArraysEqualsWithinOneUlp(r, a, Double512VectorTests::LOG1P, Double512VectorTests::strictLOG1P);
     }
 
-
     static double LOG(double a) {
         return (double)(Math.log((double)a));
     }
@@ -3843,7 +3760,6 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEqualsWithinOneUlp(r, a, Double512VectorTests::LOG, Double512VectorTests::strictLOG);
     }
-
 
     static double LOG10(double a) {
         return (double)(Math.log10((double)a));
@@ -3868,7 +3784,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertArraysEqualsWithinOneUlp(r, a, Double512VectorTests::LOG10, Double512VectorTests::strictLOG10);
     }
 
-
     static double EXPM1(double a) {
         return (double)(Math.expm1((double)a));
     }
@@ -3891,7 +3806,6 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEqualsWithinOneUlp(r, a, Double512VectorTests::EXPM1, Double512VectorTests::strictEXPM1);
     }
-
 
     static double COS(double a) {
         return (double)(Math.cos((double)a));
@@ -3916,7 +3830,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertArraysEqualsWithinOneUlp(r, a, Double512VectorTests::COS, Double512VectorTests::strictCOS);
     }
 
-
     static double TAN(double a) {
         return (double)(Math.tan((double)a));
     }
@@ -3939,7 +3852,6 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEqualsWithinOneUlp(r, a, Double512VectorTests::TAN, Double512VectorTests::strictTAN);
     }
-
 
     static double SINH(double a) {
         return (double)(Math.sinh((double)a));
@@ -3964,7 +3876,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertArraysEqualsWithinOneUlp(r, a, Double512VectorTests::SINH, Double512VectorTests::strictSINH);
     }
 
-
     static double COSH(double a) {
         return (double)(Math.cosh((double)a));
     }
@@ -3987,7 +3898,6 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEqualsWithinOneUlp(r, a, Double512VectorTests::COSH, Double512VectorTests::strictCOSH);
     }
-
 
     static double TANH(double a) {
         return (double)(Math.tanh((double)a));
@@ -4012,7 +3922,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertArraysEqualsWithinOneUlp(r, a, Double512VectorTests::TANH, Double512VectorTests::strictTANH);
     }
 
-
     static double ASIN(double a) {
         return (double)(Math.asin((double)a));
     }
@@ -4035,7 +3944,6 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEqualsWithinOneUlp(r, a, Double512VectorTests::ASIN, Double512VectorTests::strictASIN);
     }
-
 
     static double ACOS(double a) {
         return (double)(Math.acos((double)a));
@@ -4060,7 +3968,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertArraysEqualsWithinOneUlp(r, a, Double512VectorTests::ACOS, Double512VectorTests::strictACOS);
     }
 
-
     static double ATAN(double a) {
         return (double)(Math.atan((double)a));
     }
@@ -4084,7 +3991,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertArraysEqualsWithinOneUlp(r, a, Double512VectorTests::ATAN, Double512VectorTests::strictATAN);
     }
 
-
     static double CBRT(double a) {
         return (double)(Math.cbrt((double)a));
     }
@@ -4107,7 +4013,6 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEqualsWithinOneUlp(r, a, Double512VectorTests::CBRT, Double512VectorTests::strictCBRT);
     }
-
 
     static double HYPOT(double a, double b) {
         return (double)(Math.hypot((double)a, (double)b));
@@ -4135,7 +4040,6 @@ public class Double512VectorTests extends AbstractVectorTest {
     }
 
 
-
     static double POW(double a, double b) {
         return (double)(Math.pow((double)a, (double)b));
     }
@@ -4161,6 +4065,7 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertArraysEqualsWithinOneUlp(r, a, b, Double512VectorTests::POW, Double512VectorTests::strictPOW);
     }
 
+
     static double pow(double a, double b) {
         return (double)(Math.pow((double)a, (double)b));
     }
@@ -4185,7 +4090,6 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEqualsWithinOneUlp(r, a, b, Double512VectorTests::pow, Double512VectorTests::strictpow);
     }
-
 
 
     static double ATAN2(double a, double b) {
@@ -4214,7 +4118,6 @@ public class Double512VectorTests extends AbstractVectorTest {
     }
 
 
-
     @Test(dataProvider = "doubleBinaryOpProvider")
     static void POWDouble512VectorTestsBroadcastSmokeTest(IntFunction<double[]> fa, IntFunction<double[]> fb) {
         double[] a = fa.apply(SPECIES.length());
@@ -4228,6 +4131,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertBroadcastArraysEqualsWithinOneUlp(r, a, b, Double512VectorTests::POW, Double512VectorTests::strictPOW);
     }
+
 
     @Test(dataProvider = "doubleBinaryOpProvider")
     static void powDouble512VectorTestsBroadcastSmokeTest(IntFunction<double[]> fa, IntFunction<double[]> fb) {
@@ -4244,14 +4148,13 @@ public class Double512VectorTests extends AbstractVectorTest {
     }
 
 
-
     static double FMA(double a, double b, double c) {
         return (double)(Math.fma(a, b, c));
     }
+
     static double fma(double a, double b, double c) {
         return (double)(Math.fma(a, b, c));
     }
-
 
     @Test(dataProvider = "doubleTernaryOpProvider")
     static void FMADouble512VectorTests(IntFunction<double[]> fa, IntFunction<double[]> fb, IntFunction<double[]> fc) {
@@ -4278,6 +4181,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEquals(r, a, b, c, Double512VectorTests::FMA);
     }
+
     @Test(dataProvider = "doubleTernaryOpProvider")
     static void fmaDouble512VectorTests(IntFunction<double[]> fa, IntFunction<double[]> fb, IntFunction<double[]> fc) {
         int count = INVOC_COUNT;
@@ -4301,7 +4205,6 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEquals(r, a, b, c, Double512VectorTests::fma);
     }
-
 
     @Test(dataProvider = "doubleTernaryOpMaskProvider")
     static void FMADouble512VectorTestsMasked(IntFunction<double[]> fa, IntFunction<double[]> fb,
@@ -4332,10 +4235,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertArraysEquals(r, a, b, c, mask, Double512VectorTests::FMA);
     }
 
-
-
-
-
     @Test(dataProvider = "doubleTernaryOpProvider")
     static void FMADouble512VectorTestsBroadcastSmokeTest(IntFunction<double[]> fa, IntFunction<double[]> fb, IntFunction<double[]> fc) {
         double[] a = fa.apply(SPECIES.length());
@@ -4365,7 +4264,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         }
         assertAltBroadcastArraysEquals(r, a, b, c, Double512VectorTests::FMA);
     }
-
 
     @Test(dataProvider = "doubleTernaryOpMaskProvider")
     static void FMADouble512VectorTestsBroadcastMaskedSmokeTest(IntFunction<double[]> fa, IntFunction<double[]> fb,
@@ -4405,9 +4303,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertAltBroadcastArraysEquals(r, a, b, c, mask, Double512VectorTests::FMA);
     }
 
-
-
-
     @Test(dataProvider = "doubleTernaryOpProvider")
     static void FMADouble512VectorTestsDoubleBroadcastSmokeTest(IntFunction<double[]> fa, IntFunction<double[]> fb, IntFunction<double[]> fc) {
         int count = INVOC_COUNT;
@@ -4429,6 +4324,7 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertDoubleBroadcastArraysEquals(r, a, b, c, Double512VectorTests::FMA);
     }
+
     @Test(dataProvider = "doubleTernaryOpProvider")
     static void fmaDouble512VectorTestsDoubleBroadcastSmokeTest(IntFunction<double[]> fa, IntFunction<double[]> fb, IntFunction<double[]> fc) {
         int count = INVOC_COUNT;
@@ -4450,7 +4346,6 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertDoubleBroadcastArraysEquals(r, a, b, c, Double512VectorTests::fma);
     }
-
 
     @Test(dataProvider = "doubleTernaryOpMaskProvider")
     static void FMADouble512VectorTestsDoubleBroadcastMaskedSmokeTest(IntFunction<double[]> fa, IntFunction<double[]> fb,
@@ -4476,9 +4371,6 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertDoubleBroadcastArraysEquals(r, a, b, c, mask, Double512VectorTests::FMA);
     }
-
-
-
 
     static double NEG(double a) {
         return (double)(-((double)a));
@@ -4592,13 +4484,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertArraysEquals(r, a, mask, Double512VectorTests::ABS);
     }
 
-
-
-
-
-
-
-
     static double SQRT(double a) {
         return (double)(Math.sqrt((double)a));
     }
@@ -4606,8 +4491,6 @@ public class Double512VectorTests extends AbstractVectorTest {
     static double sqrt(double a) {
         return (double)(Math.sqrt((double)a));
     }
-
-
 
     @Test(dataProvider = "doubleUnaryOpProvider")
     static void SQRTDouble512VectorTests(IntFunction<double[]> fa) {
@@ -4639,8 +4522,6 @@ public class Double512VectorTests extends AbstractVectorTest {
         assertArraysEquals(r, a, Double512VectorTests::sqrt);
     }
 
-
-
     @Test(dataProvider = "doubleUnaryOpMaskProvider")
     static void SQRTMaskedDouble512VectorTests(IntFunction<double[]> fa,
                                                 IntFunction<boolean[]> fm) {
@@ -4658,25 +4539,6 @@ public class Double512VectorTests extends AbstractVectorTest {
 
         assertArraysEquals(r, a, mask, Double512VectorTests::SQRT);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     @Test(dataProvider = "doubleCompareOpProvider")
     static void ltDouble512VectorTestsBroadcastSmokeTest(IntFunction<double[]> fa, IntFunction<double[]> fb) {
@@ -5210,4 +5072,3 @@ public class Double512VectorTests extends AbstractVectorTest {
         }
     }
 }
-

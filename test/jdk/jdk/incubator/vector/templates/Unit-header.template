@@ -1068,8 +1068,8 @@ public class $vectorteststype$ extends AbstractVectorTest {
             Assert.assertEquals(r[i], (long)(a[i+offs]), "at index #" + i + ", input = " + a[i+offs]);
         }
     }
-
 #if[!Double]
+
     static void assertArraysEquals(double[] r, $type$[] a, int offs) {
         int i = 0;
         try {
@@ -1081,7 +1081,6 @@ public class $vectorteststype$ extends AbstractVectorTest {
         }
     }
 #end[!Double]
-
 
     static $bitstype$ bits($type$ e) {
         return {#if[FP]? $Type$.$type$To$Bitstype$Bits(e): e};
@@ -1176,9 +1175,9 @@ public class $vectorteststype$ extends AbstractVectorTest {
                 })).
                 toArray(Object[][]::new);
     }
-
 #if[!Int]
 #if[!byteOrShort]
+
     @DataProvider
     public Object[][] $type$toIntUnaryOpProvider() {
         return INT_$TYPE$_GENERATORS.stream().
@@ -1187,8 +1186,8 @@ public class $vectorteststype$ extends AbstractVectorTest {
     }
 #end[!byteOrShort]
 #end[!Int]
-
 #if[FP]
+
     @DataProvider
     public Object[][] $type$toLongUnaryOpProvider() {
         return LONG_$TYPE$_GENERATORS.stream().
@@ -1241,8 +1240,8 @@ public class $vectorteststype$ extends AbstractVectorTest {
                 }))).
                 toArray(Object[][]::new);
     }
-
 #if[!Int]
+
     static final List<BiFunction<Integer,Integer,$type$[]>> $TYPE$_SHUFFLE_GENERATORS = List.of(
             withToStringBi("shuffle[random]", (Integer l, Integer m) -> {
                 $type$[] a = new $type$[l];
@@ -1276,7 +1275,6 @@ public class $vectorteststype$ extends AbstractVectorTest {
                 }))).
                 toArray(Object[][]::new);
     }
-
 #end[!Int]
 
     static final List<IntFunction<$type$[]>> $TYPE$_COMPARE_GENERATORS = List.of(
@@ -1408,15 +1406,15 @@ public class $vectorteststype$ extends AbstractVectorTest {
         int length = BUFFER_REPS * vl;
         return new boolean[length];
     };
-
 #if[!Long]
+
     static final IntFunction<long[]> lfr = (vl) -> {
         int length = BUFFER_REPS * vl;
         return new long[length];
     };
 #end[!Long]
-
 #if[BITWISE]
+
     static void replaceZero($type$[] a, $type$ v) {
         for (int i = 0; i < a.length; i++) {
             if (a[i] == 0) {
@@ -1499,8 +1497,8 @@ public class $vectorteststype$ extends AbstractVectorTest {
 #end[short]
 #end[intOrLong]
     }
-
 #end[BITWISE]
+
     static boolean eq($type$ a, $type$ b) {
         return a == b;
     }
@@ -1524,8 +1522,8 @@ public class $vectorteststype$ extends AbstractVectorTest {
     static boolean ge($type$ a, $type$ b) {
         return a >= b;
     }
-
 #if[!FP]
+
     static boolean ult($type$ a, $type$ b) {
         return $Boxtype$.compareUnsigned(a, b) < 0;
     }
@@ -1639,8 +1637,8 @@ public class $vectorteststype$ extends AbstractVectorTest {
         Assert.assertEquals(asIntegral.species(), SPECIES);
 #end[FP]
     }
-
 #if[FP]
+
     @Test
     void viewAsFloatingLanesTest() {
         Vector<?> asFloating = SPECIES.zero().viewAsFloatingLanes();
@@ -1648,11 +1646,13 @@ public class $vectorteststype$ extends AbstractVectorTest {
     }
 #else[FP]
 #if[byteOrShort]
+
     @Test(expectedExceptions = UnsupportedOperationException.class)
     void viewAsFloatingLanesTest() {
         SPECIES.zero().viewAsFloatingLanes();
     }
 #else[byteOrShort]
+
     @Test
     void viewAsFloatingLanesTest() {
         Vector<?> asFloating = SPECIES.zero().viewAsFloatingLanes();
@@ -1664,8 +1664,8 @@ public class $vectorteststype$ extends AbstractVectorTest {
     }
 #end[byteOrShort]
 #end[FP]
-
 #if[BITWISE]
+
     @Test
     // Test div by 0.
     static void bitwiseDivByZeroSmokeTest() {

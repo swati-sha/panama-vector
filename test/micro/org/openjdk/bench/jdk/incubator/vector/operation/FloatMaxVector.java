@@ -205,7 +205,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
         bh.consume(r);
     }
 
-
     @Benchmark
     public void DIV(Blackhole bh) {
         float[] a = fa.apply(SPECIES.length());
@@ -222,8 +221,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
 
         bh.consume(r);
     }
-
-
 
     @Benchmark
     public void DIVMasked(Blackhole bh) {
@@ -243,9 +240,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
 
         bh.consume(r);
     }
-
-
-
 
     @Benchmark
     public void FIRST_NONZERO(Blackhole bh) {
@@ -283,58 +277,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
         bh.consume(r);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @Benchmark
     public void MIN(Blackhole bh) {
         float[] a = fa.apply(SPECIES.length());
@@ -368,12 +310,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
 
         bh.consume(r);
     }
-
-
-
-
-
-
 
     @Benchmark
     public void ADDLanes(Blackhole bh) {
@@ -535,8 +471,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
         bh.consume(ra);
     }
 
-
-
     @Benchmark
     public void withLane(Blackhole bh) {
         float[] a = fa.apply(SPECIES.length());
@@ -588,7 +522,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
         return m;
     }
 
-
     @Benchmark
     public Object IS_FINITE() {
         float[] a = fa.apply(size);
@@ -606,8 +539,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
 
         return m;
     }
-
-
 
     @Benchmark
     public Object IS_NAN() {
@@ -627,8 +558,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
         return m;
     }
 
-
-
     @Benchmark
     public Object IS_INFINITE() {
         float[] a = fa.apply(size);
@@ -646,7 +575,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
 
         return m;
     }
-
 
     @Benchmark
     public Object LT() {
@@ -767,10 +695,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
 
         return m;
     }
-
-
-
-
 
     @Benchmark
     public void blend(Blackhole bh) {
@@ -1147,7 +1071,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
         bh.consume(r);
     }
 
-
     @Benchmark
     public void SIN(Blackhole bh) {
         float[] a = fa.apply(SPECIES.length());
@@ -1162,8 +1085,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
 
         bh.consume(r);
     }
-
-
 
     @Benchmark
     public void EXP(Blackhole bh) {
@@ -1180,8 +1101,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
         bh.consume(r);
     }
 
-
-
     @Benchmark
     public void LOG1P(Blackhole bh) {
         float[] a = fa.apply(SPECIES.length());
@@ -1196,8 +1115,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
 
         bh.consume(r);
     }
-
-
 
     @Benchmark
     public void LOG(Blackhole bh) {
@@ -1214,8 +1131,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
         bh.consume(r);
     }
 
-
-
     @Benchmark
     public void LOG10(Blackhole bh) {
         float[] a = fa.apply(SPECIES.length());
@@ -1230,8 +1145,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
 
         bh.consume(r);
     }
-
-
 
     @Benchmark
     public void EXPM1(Blackhole bh) {
@@ -1248,8 +1161,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
         bh.consume(r);
     }
 
-
-
     @Benchmark
     public void COS(Blackhole bh) {
         float[] a = fa.apply(SPECIES.length());
@@ -1264,8 +1175,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
 
         bh.consume(r);
     }
-
-
 
     @Benchmark
     public void TAN(Blackhole bh) {
@@ -1282,8 +1191,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
         bh.consume(r);
     }
 
-
-
     @Benchmark
     public void SINH(Blackhole bh) {
         float[] a = fa.apply(SPECIES.length());
@@ -1298,8 +1205,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
 
         bh.consume(r);
     }
-
-
 
     @Benchmark
     public void COSH(Blackhole bh) {
@@ -1316,8 +1221,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
         bh.consume(r);
     }
 
-
-
     @Benchmark
     public void TANH(Blackhole bh) {
         float[] a = fa.apply(SPECIES.length());
@@ -1332,8 +1235,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
 
         bh.consume(r);
     }
-
-
 
     @Benchmark
     public void ASIN(Blackhole bh) {
@@ -1350,8 +1251,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
         bh.consume(r);
     }
 
-
-
     @Benchmark
     public void ACOS(Blackhole bh) {
         float[] a = fa.apply(SPECIES.length());
@@ -1366,8 +1265,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
 
         bh.consume(r);
     }
-
-
 
     @Benchmark
     public void ATAN(Blackhole bh) {
@@ -1384,8 +1281,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
         bh.consume(r);
     }
 
-
-
     @Benchmark
     public void CBRT(Blackhole bh) {
         float[] a = fa.apply(SPECIES.length());
@@ -1400,8 +1295,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
 
         bh.consume(r);
     }
-
-
 
     @Benchmark
     public void HYPOT(Blackhole bh) {
@@ -1420,8 +1313,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
         bh.consume(r);
     }
 
-
-
     @Benchmark
     public void POW(Blackhole bh) {
         float[] a = fa.apply(SPECIES.length());
@@ -1439,8 +1330,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
         bh.consume(r);
     }
 
-
-
     @Benchmark
     public void ATAN2(Blackhole bh) {
         float[] a = fa.apply(SPECIES.length());
@@ -1457,8 +1346,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
 
         bh.consume(r);
     }
-
-
 
     @Benchmark
     public void FMA(Blackhole bh) {
@@ -1478,8 +1365,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
 
         bh.consume(r);
     }
-
-
 
     @Benchmark
     public void FMAMasked(Blackhole bh) {
@@ -1501,9 +1386,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
 
         bh.consume(r);
     }
-
-
-
 
     @Benchmark
     public void NEG(Blackhole bh) {
@@ -1569,11 +1451,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
         bh.consume(r);
     }
 
-
-
-
-
-
     @Benchmark
     public void SQRT(Blackhole bh) {
         float[] a = fa.apply(SPECIES.length());
@@ -1588,8 +1465,6 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
 
         bh.consume(r);
     }
-
-
 
     @Benchmark
     public void SQRTMasked(Blackhole bh) {
@@ -1607,18 +1482,4 @@ public class FloatMaxVector extends AbstractVectorBenchmark {
 
         bh.consume(r);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
-
